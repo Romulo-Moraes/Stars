@@ -19,4 +19,10 @@
         _2DPoint starPosition;
         unsigned short starLength;
     } StarSetup;
+
+    typedef struct{
+        int width;
+        int height;
+    } TerminalMeasures;
+
 #endif
