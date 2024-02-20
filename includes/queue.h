@@ -27,6 +27,7 @@ EnqueueStatus enqueue(QueueHead *queue, StarSetup value);
 void dequeue(QueueHead *queue);
 StarSetup peekQueue(QueueHead *queue);
 void truncateQueue(QueueHead *queue);
+void updateMaxQueueCapacity(QueueHead *queue, unsigned short newMaxSz);
 
 
 #endif

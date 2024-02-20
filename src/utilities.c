@@ -17,3 +17,7 @@ StarSetup setupNewStar(_2DPoint starPosition, unsigned short starLength){
         .starLength = starLength
     };
 }
+
+int calculateProportionality(TerminalMeasures measures){
+    return (measures.width * measures.height) / 8;
+}

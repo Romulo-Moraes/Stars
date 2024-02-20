@@ -86,3 +86,7 @@ void truncateQueue(QueueHead *queue){
     queue->tail = NULL;
     queue->queueSz = 0;
 }
+
+void updateMaxQueueCapacity(QueueHead *queue, unsigned short newMaxSz){
+    queue->maxSz = newMaxSz;
+}

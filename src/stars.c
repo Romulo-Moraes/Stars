@@ -19,6 +19,8 @@ int main(void){
 
     getTerminalMeasures(&measures.width, &measures.height);    
 
+    updateMaxQueueCapacity(&starsQueue, calculateProportionality(measures));
+
     // Main loop of the program
     while(true){
         // Run until press any key
@@ -27,6 +29,7 @@ int main(void){
             if(checkForTerminalResizes()){
                 wipeOutTheStars(&starsQueue);
                 getTerminalMeasures(&measures.width, &measures.height);
+                updateMaxQueueCapacity(&starsQueue, calculateProportionality(measures));
             }
 
             // Pick a random point on terminal and a random star
