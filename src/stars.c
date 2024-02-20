@@ -13,6 +13,7 @@ int main(void){
     char *randomStar;
     StarSetup newStarSetup;
 
+    // Configuring the app
     configureApplication();
     configureNcurses();
 
@@ -20,19 +21,29 @@ int main(void){
 
     timeout(25);
 
+    // Main loop of the program
     while(true){
+        // Run until press any key
         if(getch() == ERR){
+            // Pick a random point on terminal and a random star
             starPosition = pickRandom2DPoint(measures.width, measures.height);
             randomStar = pickRandomStar(starsArray, starsArraySz);
 
+            // Create a star setup, using the position and the length
+            // of the selected star
             newStarSetup = setupNewStar(starPosition, strlen(randomStar));
 
+            // Try to enqueue the new setup
             if(enqueue(&starsQueue, newStarSetup) == QUEUE_FULL){
+                // If the queue is full, remove the first star
+                // from the queue and from the terminal
                 removeStar(&starsQueue);
 
+                // Enqueue the new star
                 enqueue(&starsQueue, newStarSetup);
             }
 
+            // Print the new star
             printStar(starPosition, randomStar);
         }else{
             break;

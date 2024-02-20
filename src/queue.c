@@ -1,7 +1,5 @@
 #include "./../includes/queue.h"
 
-
-
 static QueueNode* allocateQueueNode(){
     QueueNode *starSetup;
 
