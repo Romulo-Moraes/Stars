@@ -14,27 +14,27 @@
 </ul>
 
 ## Table of contents
-[Installing the Stars]()
+[Installing the Stars](#installing-the-stars)
 
-- [Dependencies]()
+- [Dependencies](#dependencies)
 
-- [Downloading the source code]()
+- [Downloading the source code](#dowloading-the-source-code)
 
-- [Setting up the Meson build system]()
+- [Setting up Meson build system](#setting-up-the-meson-build-system)
 
-- [Compiling source code]()
+- [Compiling source code](#compiling-the-source-code)
 
-- [Compiling the source code and installing the program in your system]()
+- [Compiling the source code and installing the program in your system](#compiling-the-source-code-and-installing-the-program-in-your-system)
 
-[Running the program]()
+[Running the program](#running-the-program)
 
-- [After compiling]()
+- [After compiling](#after-installing)
 
-- [After installing]()
+- [After installing](#after-installing)
 
-[Customizing]()
+[Customizing](#customizing)
 
-- [Number of stars]()
+- [Number of stars](#number-of-stars)
 
 # Installing the Stars
 This section contains everything you need to know to compile and run the Stars.
@@ -53,7 +53,7 @@ Copy/paste this git command on your terminal to download the source code
 git clone https://github.com/Romulo-Moraes/Stars.git
 ```
 
-## Setting up the Meson build system
+## Setting up Meson build system
 Meson build is a build system that helps in development by providing installation/compilation features.
 
 Assuming that you are in the root directory, run:
