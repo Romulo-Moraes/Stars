@@ -20,19 +20,19 @@
 
 - [Downloading the source code](#dowloading-the-source-code)
 
-- [Setting up Meson build system](#setting-up-the-meson-build-system)
+- [Setting up Meson build system](#setting-up-meson-build-system)
 
-- [Compiling source code](#compiling-the-source-code)
+- [Compiling the source code](#compiling-the-source-code)
 
 - [Compiling the source code and installing the program in your system](#compiling-the-source-code-and-installing-the-program-in-your-system)
 
 [Running the program](#running-the-program)
 
-- [After compiling](#after-installing)
+- [After compiling](#after-compiling)
 
 - [After installing](#after-installing)
 
-[Customizing](#customizing)
+[Customization](#customization)
 
 - [Number of stars](#number-of-stars)
 
@@ -89,7 +89,7 @@ After installing the project, the Stars app will be available throughout your en
 stars
 ``` 
 
-# Customizing
+# Customization
 This section will show you everything you need to know to customize the application.
 
 ## Number of stars
