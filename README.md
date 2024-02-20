@@ -1,7 +1,7 @@
 <div align="center">
     <img width="100%" src="./assets/stars-project.png"/>
     <h1></h1>
-    <h3>UTF-8 Stars for terminal interfaces</h3>
+    <h3>Unicode stars for terminal interfaces</h3>
 </div>
 
 <img width="100%" src="./assets/stars.gif"/>
