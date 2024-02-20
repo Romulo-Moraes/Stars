@@ -7,4 +7,6 @@
     #include <time.h>
     #include <string.h>
 
+    #include "stars-macros.h"
+
 #endif
