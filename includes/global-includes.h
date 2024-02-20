@@ -9,4 +9,14 @@
 
     #include "stars-macros.h"
 
+
+    typedef struct{
+        unsigned short x;
+        unsigned short y;
+    } _2DPoint;
+
+    typedef struct{
+        _2DPoint starPosition;
+        unsigned short starLength;
+    } StarSetup;
 #endif

@@ -1,5 +1,7 @@
 #include "./../includes/queue.h"
 
+
+
 static QueueNode* allocateQueueNode(){
     QueueNode *starSetup;
 
@@ -28,7 +30,7 @@ EnqueueStatus enqueue(QueueHead *queue, StarSetup value){
     }
 
     // Allocate new queue node
-    newQueueNode = allocateStarSetup();
+    newQueueNode = allocateQueueNode();
 
     // Copy data to the node
     memcpy(&newQueueNode->setup, &value, sizeof(StarSetup));
@@ -56,6 +58,8 @@ void dequeue(QueueHead *queue){
         queue->queue = nodeToDelete->next;
 
         free(nodeToDelete);
+
+        queue->queueSz--;
     }
 }
 

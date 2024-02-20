@@ -1,13 +1,14 @@
-#include "global-includes.h"
-#include "utilities.h"
+#ifndef QUEUE_GUARD
+#define QUEUE_GUARD
 
-#ifndef QUEUE
-#define QUEUE
+#include "global-includes.h"
+
 
 #define ENQUEUE_FINE 1
 #define QUEUE_FULL 0
 
 typedef unsigned char EnqueueStatus;
+
 
 typedef struct _QueueNode{
     StarSetup setup;
