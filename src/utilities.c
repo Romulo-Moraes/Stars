@@ -1,4 +1,5 @@
 #include "./../includes/utilities.h"
+#include "./../includes/configuration.h"
 
 char *pickRandomStar(char **stars, size_t arraySz){
     return stars[rand() % arraySz];
@@ -16,8 +17,4 @@ StarSetup setupNewStar(_2DPoint starPosition, unsigned short starLength){
         .starPosition = starPosition,
         .starLength = starLength
     };
-}
-
-int calculateProportionality(TerminalMeasures measures){
-    return (measures.width * measures.height) / 8;
 }

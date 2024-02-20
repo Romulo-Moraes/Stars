@@ -4,7 +4,7 @@
 #include "./../includes/configuration.h"
 
 
-int main(void){
+int main(int argc, char *argv[]){
     char *starsArray[] = {STAR1, STAR2, STAR3, STAR4, STAR5, STAR6, STAR7, STAR8, STAR9};
     size_t starsArraySz = sizeof(starsArray) / sizeof(starsArray[0]);
     QueueHead starsQueue = createQueue(65);
@@ -12,6 +12,7 @@ int main(void){
     _2DPoint starPosition;
     char *randomStar;
     StarSetup newStarSetup;
+    int starsProportionality = parseCustomProportionality(argc, argv);
 
     // Configuring the app
     configureApplication();
@@ -19,7 +20,7 @@ int main(void){
 
     getTerminalMeasures(&measures.width, &measures.height);    
 
-    updateMaxQueueCapacity(&starsQueue, calculateProportionality(measures));
+    updateMaxQueueCapacity(&starsQueue, calculateProportionality(measures, starsProportionality));
 
     // Main loop of the program
     while(true){
@@ -29,7 +30,7 @@ int main(void){
             if(checkForTerminalResizes()){
                 wipeOutTheStars(&starsQueue);
                 getTerminalMeasures(&measures.width, &measures.height);
-                updateMaxQueueCapacity(&starsQueue, calculateProportionality(measures));
+                updateMaxQueueCapacity(&starsQueue, calculateProportionality(measures, starsProportionality));
             }
 
             // Pick a random point on terminal and a random star

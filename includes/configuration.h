@@ -4,8 +4,11 @@
 #include "global-includes.h"
 
 #define EXIT_KEY '\n'
+#define DEFAULT_PROPORTIONALITY_VALUE 8
 
 void configureNcurses();
 void configureApplication();
+int parseCustomProportionality(int argc, char *argv[]);
+unsigned short calculateProportionality(TerminalMeasures measures, int customProportionality);
 
 #endif
