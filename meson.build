@@ -1,4 +1,4 @@
-project('Stars', 'c')
+project('Stars', 'c', version : '3.1')
 
 includes = include_directories('includes')
 

@@ -4,7 +4,7 @@
     <h3>UTF-8 Stars for terminal interfaces</h3>
 </div>
 
-<img src="./assets/stars.gif"/>
+<img width="100%" src="./assets/stars.gif"/>
 <p align="center">Stars was primarily a small program that I wrote to compose my setup a couple of months ago. It only took a few minutes to write it that day; however, I rewrote the source code to make it available on my Github.</p>
 
 ## Features
@@ -71,7 +71,8 @@ meson compile
 ## Compiling the source code and installing the program in your system
 If you liked the application and want to make it available across your entire system, run:
 ```sh
-meson install
+# The Meson needs sudo permissions to install the app in your bin directory
+sudo meson install
 ```
 
 # Running the program
