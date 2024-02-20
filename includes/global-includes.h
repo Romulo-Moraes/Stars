@@ -5,5 +5,6 @@
     #include <ncurses.h>
     #include <locale.h>
     #include <time.h>
+    #include <string.h>
 
 #endif
