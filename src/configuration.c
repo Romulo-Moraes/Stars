@@ -2,13 +2,13 @@
 
 void configureNcurses(){
     initscr();
-    cbreak();
+    raw();
     noecho();
     curs_set(0);
-}
-
-void getTerminalMeasures(int *width, int *height){
-    getmaxyx(stdscr, *height, *width);
+    
+    // Delay to run the main loop based
+    // on the getch() function
+    timeout(25);
 }
 
 void configureApplication(){

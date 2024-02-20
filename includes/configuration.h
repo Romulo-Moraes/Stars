@@ -3,8 +3,9 @@
 
 #include "global-includes.h"
 
+#define EXIT_KEY '\n'
+
 void configureNcurses();
-void getTerminalMeasures(int *width, int *height);
 void configureApplication();
 
 #endif

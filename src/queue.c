@@ -64,3 +64,25 @@ void dequeue(QueueHead *queue){
 StarSetup peekQueue(QueueHead *queue){
     return queue->queue->setup;
 }
+
+void truncateQueue(QueueHead *queue){
+    QueueNode *x, *y;
+
+    x = queue->queue;
+    y = x->next;
+
+    while(y){
+        free(x);
+        x = y;
+
+        y = y->next;
+    }
+
+    if(x){
+        free(x);
+    }
+
+    queue->queue = NULL;
+    queue->tail = NULL;
+    queue->queueSz = 0;
+}

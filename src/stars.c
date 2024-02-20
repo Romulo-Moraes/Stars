@@ -17,14 +17,18 @@ int main(void){
     configureApplication();
     configureNcurses();
 
-    getTerminalMeasures(&measures.width, &measures.height);
-
-    timeout(25);
+    getTerminalMeasures(&measures.width, &measures.height);    
 
     // Main loop of the program
     while(true){
         // Run until press any key
-        if(getch() == ERR){
+        if(getch() != EXIT_KEY){
+
+            if(checkForTerminalResizes()){
+                wipeOutTheStars(&starsQueue);
+                getTerminalMeasures(&measures.width, &measures.height);
+            }
+
             // Pick a random point on terminal and a random star
             starPosition = pickRandom2DPoint(measures.width, measures.height);
             randomStar = pickRandomStar(starsArray, starsArraySz);
@@ -35,6 +39,7 @@ int main(void){
 
             // Try to enqueue the new setup
             if(enqueue(&starsQueue, newStarSetup) == QUEUE_FULL){
+                
                 // If the queue is full, remove the first star
                 // from the queue and from the terminal
                 removeStar(&starsQueue);

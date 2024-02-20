@@ -1,5 +1,10 @@
 #include "./../includes/render.h"
 
+TerminalMeasures measures = (TerminalMeasures){
+    .height = UNSET_MEASURE,
+    .width = UNSET_MEASURE
+};
+
 void printStar(_2DPoint starPosition, char *selectedStar){
     mvprintw(starPosition.y, starPosition.x, selectedStar);
     refresh();
@@ -15,4 +20,30 @@ void removeStar(QueueHead *qHead){
 
     // Remove the star from the queue
     dequeue(qHead);
+}
+
+
+void getTerminalMeasures(int *width, int *height){
+    getmaxyx(stdscr, *height, *width);
+
+    measures.width = *width;
+    measures.height = *height;
+}
+
+bool checkForTerminalResizes(){
+    int width, height;
+
+    getmaxyx(stdscr, height, width);
+
+    if(width != measures.width || height != measures.height){
+        return true;
+    }
+
+    return false;
+}
+
+void wipeOutTheStars(QueueHead *starsQueue){
+    truncateQueue(starsQueue);
+    wclear(stdscr);
+    refresh();
 }
