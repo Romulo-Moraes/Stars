@@ -5,7 +5,7 @@
 </div>
 
 <img width="100%" src="./assets/stars.gif"/>
-<p align="center">Stars was primarily a small program that I wrote to compose my setup a couple of months ago. It only took a few minutes to write it that day; however, I rewrote the source code to make it available on my Github.</p>
+<p align="center">Stars was primarily a small program that I wrote to compose my setup a few months ago. It only took a few minutes to write it that day; however, I rewrote the source code to make it available on my Github. Some features have been added to the program to make it suitable for more environments.</p>
 
 ## Features
 <ul>
