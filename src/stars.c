@@ -2,6 +2,8 @@
 #include "./../includes/queue.h"
 #include "./../includes/utilities.h"
 #include "./../includes/configuration.h"
+#include "./../includes/arguments.h"
+#include "./../includes/colors.h"
 
 
 int main(int argc, char *argv[]){
@@ -12,11 +14,28 @@ int main(int argc, char *argv[]){
     _2DPoint starPosition;
     char *randomStar;
     StarSetup newStarSetup;
-    int starsProportionality = parseCustomProportionality(argc, argv);
+    int starsProportionality;
+    Arguments args;
+    Color starsColor;
 
     // Configuring the app
+    configureArgumentParser(argc, argv);
     configureApplication();
     configureNcurses();
+
+    args = getProgramArguments();
+
+    initializeColors();
+
+    if(args.color.set == ANEMONE_TRUE) {
+        starsColor = checkForColorExistence(args.color.value);
+
+        if(starsColor != NO_COLOR_MATCH) {
+            setColor(starsColor);
+        }
+    }
+
+    starsProportionality = parseCustomProportionality(args.proportionality.value);
 
     getTerminalMeasures(&measures.width, &measures.height);    
 

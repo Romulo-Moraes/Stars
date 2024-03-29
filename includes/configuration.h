@@ -8,7 +8,7 @@
 
 void configureNcurses();
 void configureApplication();
-int parseCustomProportionality(int argc, char *argv[]);
+int parseCustomProportionality(char *proportionality);
 unsigned short calculateProportionality(TerminalMeasures measures, int customProportionality);
 
 #endif

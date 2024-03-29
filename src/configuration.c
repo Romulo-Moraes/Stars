@@ -1,5 +1,10 @@
 #include "./../includes/configuration.h"
 
+static void messageAndExit(char *message){
+    puts(message);
+    exit(1);
+}
+
 static bool isDigit(char *string){
     while(*string){
         if(isdigit(*string) == 0){
@@ -16,6 +21,8 @@ void configureNcurses(){
     initscr();
     raw();
     noecho();
+    start_color();
+    use_default_colors();
     curs_set(0);
     
     // Delay to run the main loop based
@@ -31,26 +38,25 @@ void configureApplication(){
     srand(time(NULL));
 }
 
-int parseCustomProportionality(int argc, char *argv[]){
+int parseCustomProportionality(char *proportionality){
     int customProportionality;
 
-    if(argc >= 2){
-
-        if(isDigit(argv[1]) == true){
-            customProportionality = atoi(argv[1]);
+    if(proportionality != NULL){
+        if(isDigit(proportionality) == true){
+            customProportionality = atoi(proportionality);
 
             if(customProportionality != 0){
                 return customProportionality;
+            } else {
+                messageAndExit("The proportionality wasn't a positive integer");
             }
 
-            puts("The proportionality needs to be a positive value");
-            exit(1);
+            messageAndExit("The proportionality needs to be a positive value");
+        } else {
+            messageAndExit("The proportionality wasn't a positive integer");
         }
-
-        puts("Proportionality value was not a positive number");
-        exit(1);
     }
-
+    
     return DEFAULT_PROPORTIONALITY_VALUE;
 }
 

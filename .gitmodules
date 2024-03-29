@@ -1,0 +1,3 @@
+[submodule "libs/Anemone"]
+	path = libs/Anemone
+	url = https://github.com/Romulo-Moraes/Anemone.git

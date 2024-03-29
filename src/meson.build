@@ -1,1 +1,1 @@
-src += files(['stars.c', 'render.c', 'queue.c', 'configuration.c', 'utilities.c'])
+src += files(['stars.c', 'render.c', 'queue.c', 'configuration.c', 'utilities.c', 'colors.c', 'arguments.c'])

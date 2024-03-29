@@ -36,34 +36,33 @@
 
 - [Number of stars](#number-of-stars)
 
+- [Colors](#color)
+
 # Installing the Stars
 This section contains everything you need to know to compile and run the Stars.
 
 ## Dependencies
-Stars requires a runtime dependency to be linked with the executable.
+Stars requires the following dependencies to be linked with the executable.
 
 <ul>
     <li>Ncurses</li>
+    <li>Anemone</li>
 </ul>
 
 ## Dowloading the source code
 Copy/paste this git command on your terminal to download the source code
 
 ```sh
-git clone https://github.com/Romulo-Moraes/Stars.git
+git clone --recursive https://github.com/Romulo-Moraes/Stars.git
 ```
 
 ## Setting up Meson build system
-Meson build is a build system that helps in development by providing installation/compilation features.
+The process of setting up the build system is completely done by running the `build.sh` script on the project root. It will initialize the Meson Build system for the Stars and its dependencies.
 
-Assuming that you are in the root directory, run:
-```sh
-meson setup build
-cd build
-```
+<b>If you don't have the Meson on your system, you can get it from here: https://mesonbuild.com/Getting-meson_ptbr.html. Or from your package manager if available.</b>
 
 ## Compiling the source code
-The Meson build handles the entire compilation process of the program. To compile the project, run: 
+The Meson build handles the entire compilation process of the program. To compile the project, run the following command inside the `build/` directory: 
 ```sh
 meson compile
 ```
@@ -95,11 +94,29 @@ This section will show you everything you need to know to customize the applicat
 ## Number of stars
 The number of stars is defined based on the terminal's dimensions. By default, a star is created for every 8 terminal cells. You can define how many cells are necessary to create a single star.
 
-To customize the default value, you can pass any &#8469;<sup>*</sup> number as the first program argument:
+To customize the default value, you can pass any &#8469;<sup>*</sup> number using the `--proportionality` flag:
 ```sh
-stars 28
+stars --proportionality 28
 ```
 
 The program call above will instruct the Stars to create a new star for every 28 terminal cells.
 
 Note: A single star is not limited by the range of a 28-cell block; it is simply a calculation to determine the maximum number of stars shown on the terminal.
+
+## Color
+The color of the stars is defined using the flag `--color` and accepts the following set of colors:
+<ul>
+   <li>black</li>
+   <li>blue</li>
+   <li>cyan</li>
+   <li>green</li>
+   <li>magenta</li>
+   <li>red</li>
+   <li>white</li>
+   <li>yellow</li>
+</ul>
+
+```sh
+stars --color yellow
+```
+Note: the default color is `white`

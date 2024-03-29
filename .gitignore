@@ -1,0 +1,7 @@
+build/*
+!build/.gitkeep
+assets/stars-project-backup.png
+assets/backup.png
+tests/*
+!tests/.gitkeep
+libs/*

@@ -1,4 +1,5 @@
 #include "./../includes/render.h"
+#include "./../includes/colors.h"
 
 TerminalMeasures measures = (TerminalMeasures){
     .height = UNSET_MEASURE,
@@ -6,7 +7,9 @@ TerminalMeasures measures = (TerminalMeasures){
 };
 
 void printStar(_2DPoint starPosition, char *selectedStar){
+    attron(COLOR_PAIR(getColor()));
     mvprintw(starPosition.y, starPosition.x, selectedStar);
+    attroff(COLOR_PAIR(getColor()));
     refresh();
 }
 
