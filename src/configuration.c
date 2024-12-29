@@ -32,7 +32,7 @@ void configureNcurses(){
 
 void configureApplication(){
     // Set the locale for the program
-    setlocale(LC_ALL, "");
+    setlocale(LC_ALL, "en_US.utf8");
     // Initialize the rand seed for random 
     // numbers generation
     srand(time(NULL));
