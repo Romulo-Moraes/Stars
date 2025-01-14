@@ -121,3 +121,51 @@ The color of the stars is defined using the flag `--color` and accepts the follo
 stars --color yellow
 ```
 Note: the default color is `white`
+
+## Modes
+You can choose between two modes when launching the application. Each mode offers unique features, creating distinct star patterns.
+
+### Queue (Default)
+The queue mode generates a star queue with a size defined by the proportionality configuration. In each render loop, a new star is added and displayed on the screen. Once the queue reaches its limit, the oldest stars start to disappear as new ones are created at random positions.
+
+#### Characteristics
+<ul>
+    <li>Stars don't blink</li>
+    <li>New stars are created every time on different positions during the program's execution</li>
+    <li>If the proportionality value is low, stars may stay on the screen for a long time before disappearing</li>
+    <li>Good for small resolutions</li>
+</ul>
+
+#### Using the Queue mode
+The queue mode is the stars' default mode; however, you can make it explicit with the following flag:
+```sh
+stars --mode queue
+```
+
+### Fixed
+The fixed mode generates all stars at startup, assigning each a fixed position and an interval value in milliseconds. When the elapsed time matches the interval, the star will either appear or disappear, depending on its previous state.
+
+#### Characteristics
+<ul>
+    <li>Stars blink independently</li>
+    <li>No new stars are created during the program's execution</li>
+    <li>The interval range in milliseconds may be defined on program's startup</li>
+    <li>The default visibility state assigned to a star upon its creation is random, which means even short intervals, such as 600-601, may produce a cool effect</li>
+    <li>Good for large resolutions</li>
+</ul>
+
+#### Using the Fixed mode
+To use the fixed mode, the following flag and value must be set:
+```sh
+stars --mode fixed
+```
+
+#### Creating a custom interval range
+At startup, each newly created star is assigned a random blink interval (in milliseconds) within the default or specified range.
+
+You can use the following flag and format to create a custom range:
+```sh
+stars --mode fixed --interval 500-1000
+```
+
+<b>Note: the default range is 800-1500</b>

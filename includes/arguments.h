@@ -5,6 +5,7 @@
 #define PROGRAM_DESCRIPTION "Unicode stars for terminal interfaces"
 #define CREATORS "Cypher (romulo.moraes.dev@gmail.com)"
 
+
 typedef struct {
     anemone_optional_return_value color;
     anemone_optional_return_value proportionality;
