@@ -7,11 +7,11 @@ static void messageAndExit(char *message){
 
 static bool isDigit(char *string){
     while(*string){
-        if(isdigit(*string) == 0){
-            return false;
-        }
+	if(isdigit(*string) == 0){
+	    return false;
+	}
 
-        string++;
+	string++;
     }
 
     return true;
@@ -42,19 +42,19 @@ int parseCustomProportionality(char *proportionality){
     int customProportionality;
 
     if(proportionality != NULL){
-        if(isDigit(proportionality) == true){
-            customProportionality = atoi(proportionality);
+	if(isDigit(proportionality) == true){
+	    customProportionality = atoi(proportionality);
 
-            if(customProportionality != 0){
-                return customProportionality;
-            } else {
-                messageAndExit("The proportionality wasn't a positive integer");
-            }
+	    if(customProportionality != 0){
+		return customProportionality;
+	    } else {
+		messageAndExit("The proportionality wasn't a positive integer");
+	    }
 
-            messageAndExit("The proportionality needs to be a positive value");
-        } else {
-            messageAndExit("The proportionality wasn't a positive integer");
-        }
+	    messageAndExit("The proportionality needs to be a positive value");
+	} else {
+	    messageAndExit("The proportionality wasn't a positive integer");
+	}
     }
     
     return DEFAULT_PROPORTIONALITY_VALUE;
