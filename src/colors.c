@@ -15,9 +15,9 @@ void initializeColors(){
 
 static void toLowerCase(char *value){
     while(*value){
-        *value = tolower(*value);
+	*value = tolower(*value);
 
-        value++;
+	value++;
     }
 }
 
@@ -25,23 +25,23 @@ Color checkForColorExistence(char *color){
     toLowerCase(color);
 
     if(strcmp(color, "black") == 0){
-        return BLACK;
+	return BLACK;
     } else if(strcmp(color, "blue") == 0) {
-        return BLUE;
+	return BLUE;
     } else if(strcmp(color, "cyan") == 0) {
-        return CYAN;
+	return CYAN;
     } else if(strcmp(color, "green") == 0) {
-        return GREEN;
+	return GREEN;
     } else if(strcmp(color, "magenta") == 0) {
-        return MAGENTA;
+	return MAGENTA;
     } else if(strcmp(color, "red") == 0) {
-        return RED;
+	return RED;
     } else if(strcmp(color, "white") == 0) {
-        return WHITE;
+	return WHITE;
     } else if(strcmp(color, "yellow") == 0) {
-        return YELLOW;
+	return YELLOW;
     } else {
-        return NO_COLOR_MATCH;
+	return NO_COLOR_MATCH;
     }
 }
 
