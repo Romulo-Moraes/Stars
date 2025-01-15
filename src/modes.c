@@ -47,6 +47,8 @@ int fixedMode(int starsProportionality, int lowerBound, int upperBound) {
 		    case STATE_VISIBLE:
 			stars[i].starState = STATE_HIDDEN;
 			mvaddnstr(stars[i].position.y, stars[i].position.x, WHITE_SPACE, stars[i].starSize);
+
+			stars[i].interval = (rand() % (upperBound - lowerBound)) + lowerBound;
 			break;
 		    case STATE_HIDDEN:
 			stars[i].starState = STATE_VISIBLE;
