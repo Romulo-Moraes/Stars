@@ -150,6 +150,7 @@ The fixed mode generates all stars at startup, assigning each a fixed position a
     <li>Stars blink independently</li>
     <li>No new stars are created during the program's execution</li>
     <li>The interval range in milliseconds may be defined on program's startup</li>
+    <li>After each blink, a star receives a new interval value, making the duration of each blink different</li>
     <li>The default visibility state assigned to a star upon its creation is random, which means even short intervals, such as 600-601, may produce a cool effect</li>
     <li>Good for large resolutions</li>
 </ul>
